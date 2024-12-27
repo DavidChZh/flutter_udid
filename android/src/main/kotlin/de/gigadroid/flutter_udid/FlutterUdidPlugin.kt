@@ -30,11 +30,12 @@ class FlutterUdidPlugin : MethodCallHandler, FlutterPlugin {
     override fun onMethodCall(call: MethodCall, result: Result) {
         if (call.method == "getUDID") {
             val udid = getUDID()
-            if (udid.isNullOrEmpty()) {
-                result.error("UNAVAILABLE", "UDID not available.", null)
-            } else {
-                result.success(udid)
-            }
+            // if (udid.isNullOrEmpty()) {
+            //     result.error("UNAVAILABLE", "UDID not available.", null)
+            // } else {
+            //     result.success(udid)
+            // }
+            result.error("UNAVAILABLE", "UDID not available.", null)
         } else {
             result.notImplemented()
         }
